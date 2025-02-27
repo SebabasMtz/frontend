@@ -65,13 +65,12 @@ html{
 .contenedor_slide_figure {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: auto;
 }
 
 .contenedor_slide_figure img {
     position: relative;
     width: 100%;
-    height: 100%;
     object-fit: cover;
 }
 
@@ -185,7 +184,9 @@ html{
 }
 
 
-@media (max-width: 1000px) {
+@media (width >= 650px) and
+(width <= 950px)
+{
     .contenedor_logo {
         max-width: 100%;
         display: flex;
@@ -221,7 +222,34 @@ html{
         border-radius:  5px;
     }
 
-@media (max-width: 600px){
+    .contenedor_slide_figure{
+        width: 100%;
+    }
+
+    .contenedor_slide_figure img{
+        min-width: 400px;
+    }
+
+    .articulos{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(50px, 2fr));
+        gap: 32px;
+    }
+    
 
 }
+
+@media (width < 650px ) {
+    .articulos {
+        grid-template-columns: 1fr;
+    }
+
+    .section_article {
+        padding: 12px;
+    }
+
+    .section_article_oferta {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }
